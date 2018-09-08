@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "fix": "eslint --fix"
+    "fix": "eslint --fix",
+    "commitMsg": "commitlint -E GIT_PARAMS"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,13 @@
   "devDependencies": {
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^0.14.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run commitMsg",
+      "pre-push": "npm run lint"
+    }
   }
 }
