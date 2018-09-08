@@ -1,0 +1,33 @@
+{
+  "name": "mybloggerserver",
+  "version": "0.0.1",
+  "description": "博客网站后台服务端",
+  "main": "src/ndex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "fix": "eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuyangzi/myBloggerServer.git"
+  },
+  "keywords": [
+    "service",
+    "blog"
+  ],
+  "author": "wangyiming19950222@hmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuyangzi/myBloggerServer/issues"
+  },
+  "homepage": "https://github.com/yuyangzi/myBloggerServer#readme",
+  "dependencies": {
+    "koa": "^2.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
