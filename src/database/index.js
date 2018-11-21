@@ -16,6 +16,7 @@ const connect = () => {
   return new Promise((resolve, reject) => {
     // 如果node是在开发环境下则启用mongoose的debug
     if (process.env.NODE_ENV === 'DEV') {
+      console.log(process.env.NODE_ENV);
       mongoose.set('debug', true);
     }
     mongoose.set('useCreateIndex', true);

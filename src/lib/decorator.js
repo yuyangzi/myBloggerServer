@@ -56,7 +56,7 @@ const normalizePath = path => path.startsWith('/') ? path : `/${path}`;
  * @param {*} config: {method, path};
  * @returns decorator
  */
-const router = config => (target, key, descriptor) => {
+const router = config => (target, key) => {
   config.path = normalizePath(config.path);
   routerMap.set({target, ...config}, target[key])
 };

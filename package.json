@@ -2,7 +2,7 @@
   "name": "mybloggerserver",
   "version": "0.0.1",
   "description": "博客网站后台服务端",
-  "main": "src/ndex.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,7 +19,7 @@
     "service",
     "blog"
   ],
-  "author": "wangyiming19950222@hmail.com",
+  "author": "wangyiming19950222@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yuyangzi/myBloggerServer/issues"
@@ -28,13 +28,14 @@
   "dependencies": {
     "bcrypt": "^3.0.2",
     "glob": "^7.1.3",
-    "koa": "^2.6.1",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.11",
-    "mongoose": "^5.3.9"
+    "mongoose": "^5.3.13"
   },
   "devDependencies": {
-    "eslint": "^5.8.0",
+    "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "husky": "^0.14.3"
