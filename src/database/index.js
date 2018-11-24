@@ -15,8 +15,7 @@ const connect = () => {
 
   return new Promise((resolve, reject) => {
     // 如果node是在开发环境下则启用mongoose的debug
-    if (process.env.NODE_ENV === 'DEV') {
-      console.log(process.env.NODE_ENV);
+    if (process.env.NODE_ENV === 'development') {
       mongoose.set('debug', true);
     }
     mongoose.set('useCreateIndex', true);
@@ -43,7 +42,7 @@ const connect = () => {
 
     // 监听mongoose的打开事件
     mongodb.once('open', () => {
-      console.log('MongoDB Connected succesfully!');
+      console.log('MongoDB Connected successfully!');
       resolve();
     });
   });

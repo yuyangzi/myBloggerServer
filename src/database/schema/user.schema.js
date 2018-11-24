@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 // 将数据加盐的库
 const bcrypt = require('bcrypt');
 
+const {updateUpdateAt} = require('../shaerd.methods');
+
+
 // 数据的加盐等级
 const SALT_WORK_FACTOR = 10;
 
@@ -66,14 +69,7 @@ userSchema.virtual('isLocked').get(function () {
 });
 
 // 在存储数据之前调用的函数
-userSchema.pre('save', function (next) {
-  if (this.isNew) {
-    this.meta.createAt = this.meta.updateAt = Date.now();
-  } else {
-    this.meta.updateAt = Date.now();
-  }
-  next();
-});
+userSchema.pre('save', updateUpdateAt);
 
 userSchema.pre('save', function (next) {
   if (!this.isModified('password')) return next();

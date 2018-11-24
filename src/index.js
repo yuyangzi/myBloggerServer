@@ -6,11 +6,11 @@ const {middleWaresRouter} = require('./middlewares/router');
 (async () => {
   const app = new Koa();
   app.use(bodyParser());
-
-  app.use(async ctx => {
+  app.use(async (ctx, next) => {
     // the parsed body will store in ctx.request.body
     // if nothing was parsed, body will be an empty object {}
     ctx.body = ctx.request.body;
+    await next();
   });
   /********初始数据库*******/
   await connect();
@@ -18,7 +18,6 @@ const {middleWaresRouter} = require('./middlewares/router');
   await initAdmin();
   // use路由中间件
   middleWaresRouter(app);
-
   // 指定端口
   app.listen(4800);
 

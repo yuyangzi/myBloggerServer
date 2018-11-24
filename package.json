@@ -4,7 +4,7 @@
   "description": "博客网站后台服务端",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start_DEV": "NODE_ENV=development nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "fix": "eslint --fix",
