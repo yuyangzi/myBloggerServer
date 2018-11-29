@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const {NODE_ENV} = require('../config/env.config');
 const db = 'mongodb://localhost/blogDB';
 
 const glob = require('glob');
@@ -15,7 +16,7 @@ const connect = () => {
 
   return new Promise((resolve, reject) => {
     // 如果node是在开发环境下则启用mongoose的debug
-    if (process.env.NODE_ENV === 'development') {
+    if (NODE_ENV === 'development') {
       mongoose.set('debug', true);
     }
     mongoose.set('useCreateIndex', true);

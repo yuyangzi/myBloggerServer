@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start_DEV": "NODE_ENV=development nodemon src/index.js",
+    "start_local": "node -r dotenv/config src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "fix": "eslint --fix",
@@ -35,6 +36,7 @@
     "mongoose": "^5.3.13"
   },
   "devDependencies": {
+    "dotenv": "^6.1.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",

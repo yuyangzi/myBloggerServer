@@ -2,6 +2,7 @@ const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const {connect, initAdmin, initSchema} = require('./database/index');
 const {middleWaresRouter} = require('./middlewares/router');
+const {PORT} = require('./config/env.config.js');
 
 (async () => {
   const app = new Koa();
@@ -19,6 +20,6 @@ const {middleWaresRouter} = require('./middlewares/router');
   // use路由中间件
   middleWaresRouter(app);
   // 指定端口
-  app.listen(4800);
+  app.listen(PORT);
 
 })();
