@@ -2,11 +2,11 @@
   "name": "mybloggerserver",
   "version": "0.0.1",
   "description": "博客网站后台服务端",
-  "main": "src/index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/index.js",
-    "start_DEV": "NODE_ENV=development nodemon src/index.js",
-    "start_local": "node -r dotenv/config src/index.js",
+    "start": "node app.js",
+    "start_DEV": "nodemon app.js",
+    "start_local": "node -r dotenv/config app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "fix": "eslint --fix",
@@ -39,7 +39,6 @@
   },
   "lint-staged": {
     "src/**/*.{js,ts,json,md}": [
-      "eslint --fix",
       "prettier --single-quote --write",
       "git add"
     ]
