@@ -1,3 +1,4 @@
+// eslint-disable-next-line consistent-return
 const handleBlogRouter = (req, res) => {
   const { method } = req;
 
@@ -21,6 +22,7 @@ const handleBlogRouter = (req, res) => {
 
   // 新建博客的接口
   if (method === 'POST' && path === '/api/blog/new') {
+    console.log(req.body);
     return {
       msg: '这是新建博客的接口',
     };
@@ -32,6 +34,8 @@ const handleBlogRouter = (req, res) => {
       msg: '这是更新博客的接口',
     };
   }
+
+  return null;
 };
 
 module.exports = handleBlogRouter;

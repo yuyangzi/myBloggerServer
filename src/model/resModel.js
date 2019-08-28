@@ -2,13 +2,11 @@ class BaseModel {
   constructor(result, message) {
     if (typeof result === 'string') {
       this.message = result;
-      result = null;
-      message = null;
+      this.result = null;
+    } else {
+      this.result = result || null;
+      this.message = message || null;
     }
-
-    this.result = result || null;
-
-    this.message = message || null;
   }
 }
 

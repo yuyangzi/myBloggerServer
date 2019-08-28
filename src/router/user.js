@@ -11,6 +11,8 @@ const handleUserRouter = (req, res) => {
       msg: '这是用户登录接口',
     };
   }
+
+  return null;
 };
 
 module.exports = handleUserRouter;
