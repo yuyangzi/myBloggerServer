@@ -22,7 +22,6 @@ const handleBlogRouter = (req, res) => {
 
   // 新建博客的接口
   if (method === 'POST' && path === '/api/blog/new') {
-    console.log(req.body);
     return {
       msg: '这是新建博客的接口',
     };

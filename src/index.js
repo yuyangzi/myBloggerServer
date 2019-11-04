@@ -2,26 +2,27 @@ const handleBlogRouter = require('./router/blog');
 
 const handleUserRouter = require('./router/user');
 
-const getPostRequestData = req =>
-  new Promise(resolve => {
-    if (req.method !== 'POST') {
-      resolve({});
-      return;
-    }
+const a = require('./config/db');
 
-    if (req.headers['content-type'] !== 'application/json') {
-      resolve({});
-    }
-
-    let postData = '';
-    req.on('data', chunk => {
-      postData += chunk;
-    });
-
-    req.on('end', () => {
-      resolve(postData || {});
-    });
+function disposePostRequest(resolve, req) {
+  if (req.method !== 'POST') {
+    resolve({});
+    return;
+  }
+  if (req.headers['content-type'] !== 'application/json') {
+    resolve({});
+  }
+  let postData = '';
+  req.on('data', chunk => {
+    postData += chunk;
   });
+  req.on('end', () => {
+    resolve(postData || {});
+  });
+}
+
+const getPostRequestData = req =>
+  new Promise(resolve => disposePostRequest(resolve, req));
 
 const serverHandle = (req, res) => {
   // 设置返回格式
